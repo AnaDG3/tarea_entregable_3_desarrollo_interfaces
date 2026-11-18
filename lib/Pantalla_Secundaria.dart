@@ -14,13 +14,7 @@ final Planeta planeta;
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-        appBar: AppBar(centerTitle: true, title: Text(planeta.nombre, style: TextStyle(color: Colors.white),), backgroundColor: Colors.black12, iconTheme: IconThemeData(color: Colors.white),
-          actions: [
-            IconButton(
-                icon: Icon(Icons.arrow_back),
-                onPressed: () => Navigator.pop(context)
-            ),
-          ],
+        appBar: AppBar(centerTitle: true, title: Text(planeta.nombre, style: TextStyle(color: Colors.white),), backgroundColor: Colors.black45, iconTheme: IconThemeData(color: Colors.white),
         ),
         body: Column(
 

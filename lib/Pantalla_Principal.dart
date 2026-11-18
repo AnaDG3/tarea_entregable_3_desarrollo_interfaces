@@ -23,11 +23,11 @@ class PantallaPrincipal extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(centerTitle: true, title: Text("Sistema Solar", style: TextStyle(color: Colors.white),), backgroundColor: Colors.black12),
+        appBar: AppBar(centerTitle: true, title: Text("Sistema Solar", style: TextStyle(color: Colors.white), ), backgroundColor: Colors.black45),
         body: SafeArea(
           child: ListView(
             children: <Widget>[
-              ListTile(title: Text(tierra.nombre),
+              ListTile(title: Text(tierra.nombre), subtitle: Text(tierra.Radio),
                 trailing: IconButton(onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -37,7 +37,7 @@ class PantallaPrincipal extends StatelessWidget {
                 ), icon: Icon(Icons.chevron_right)),
                 leading: Container(child: Image.asset(tierra.imagenUrl, fit: BoxFit.cover)),
               ),
-              ListTile(title: Text(venus.nombre),
+              ListTile(title: Text(venus.nombre), subtitle: Text(venus.Radio),
                 trailing: IconButton(onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -47,7 +47,7 @@ class PantallaPrincipal extends StatelessWidget {
                 ), icon: Icon(Icons.chevron_right)),
                 leading: Container(child: Image.asset(venus.imagenUrl, fit: BoxFit.cover)),
               ),
-              ListTile(title: Text(mercurio.nombre),
+              ListTile(title: Text(mercurio.nombre), subtitle: Text(mercurio.Radio),
                 trailing: IconButton(onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
