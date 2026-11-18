@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-
 import 'datos_planetas.dart';
 
 class PantallaSecundaria extends StatelessWidget {
@@ -14,7 +12,6 @@ class PantallaSecundaria extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-
       appBar: AppBar(
         centerTitle: true,
         title: Text(
@@ -24,10 +21,10 @@ class PantallaSecundaria extends StatelessWidget {
         backgroundColor: Colors.black45,
         iconTheme: IconThemeData(color: Colors.white),
       ),
-
       body: Column(
         children: [
           Image.asset(planeta.imagenUrl),
+          Text(planeta.descripcion),
         ],
       ),
     );

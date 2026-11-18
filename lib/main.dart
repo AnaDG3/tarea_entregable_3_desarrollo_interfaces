@@ -7,9 +7,30 @@ void main() => runApp(
   MaterialApp(
     debugShowCheckedModeBanner: false,
     initialRoute: '/',
-    routes: {
-      '/': (context) => const PantallaPrincipal(),
-      '/detalles': (context) => const PantallaSecundaria(),
+
+    onGenerateRoute: (settings) {
+      switch (settings.name) {
+
+        case '/':
+          return MaterialPageRoute(
+            builder: (context) => const PantallaPrincipal(),
+          );
+
+        case '/detalles':
+          return MaterialPageRoute(
+            builder: (context) => const PantallaSecundaria(),
+            settings: settings,
+          );
+
+        default:
+          return MaterialPageRoute(
+            builder: (context) => Scaffold(
+              body: Center(
+                child: Text("Página no encontrada"),
+              ),
+            ),
+          );
+      }
     },
   ),
 );
