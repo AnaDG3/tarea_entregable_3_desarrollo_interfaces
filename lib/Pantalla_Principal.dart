@@ -5,7 +5,7 @@ import 'datos_planetas.dart';
 
 void main() => runApp(
   const MaterialApp(
-    debugShowCheckedModeBanner: false, // Opcional: quita la etiqueta de debug
+    debugShowCheckedModeBanner: false,
     home: PantallaPrincipal(),
   ),
 );
@@ -17,46 +17,57 @@ class PantallaPrincipal extends StatelessWidget {
   static Planeta venus = obtenerPlanetaPorId("PLANET-002");
   static Planeta mercurio = obtenerPlanetaPorId("PLANET-003");
 
+  static List<Planeta> planetas = [
+    tierra,
+    venus,
+    mercurio,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(centerTitle: true, title: Text("Sistema Solar", style: TextStyle(color: Colors.white), ), backgroundColor: Colors.black45),
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            "Sistema Solar",
+            style: TextStyle(color: Colors.white),
+          ),
+          backgroundColor: Colors.black45,
+        ),
         body: SafeArea(
           child: ListView(
             children: <Widget>[
-              ListTile(title: Text(tierra.nombre), subtitle: Text(tierra.Radio),
-                trailing: IconButton(onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        PantallaSecundaria(planeta: tierra),
+              for (int i = 0; i < planetas.length; i++) ...[
+                ListTile(
+                  title: Text(planetas[i].nombre),
+                  subtitle: Text(planetas[i].Radio),
+                  trailing: IconButton(
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            PantallaSecundaria(planeta: planetas[i]),
+                      ),
+                    ),
+                    icon: Icon(Icons.chevron_right),
                   ),
-                ), icon: Icon(Icons.chevron_right)),
-                leading: Container(child: Image.asset(tierra.imagenUrl, fit: BoxFit.cover)),
-              ),
-              ListTile(title: Text(venus.nombre), subtitle: Text(venus.Radio),
-                trailing: IconButton(onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        PantallaSecundaria(planeta: venus),
+                  leading: Container(
+                    child: Image.asset(
+                      planetas[i].imagenUrl,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                ), icon: Icon(Icons.chevron_right)),
-                leading: Container(child: Image.asset(venus.imagenUrl, fit: BoxFit.cover)),
-              ),
-              ListTile(title: Text(mercurio.nombre), subtitle: Text(mercurio.Radio),
-                trailing: IconButton(onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        PantallaSecundaria(planeta: mercurio),
+                ),
+                if (i < planetas.length - 1)
+                  Divider(
+                    color: Colors.grey,
+                    thickness: 1,
+                    height: 1,
                   ),
-                ), icon: Icon(Icons.chevron_right)),
-                leading: Container(child: Image.asset(mercurio.imagenUrl, fit: BoxFit.cover)),
-              ),
+              ],
             ],
           ),
         ),
