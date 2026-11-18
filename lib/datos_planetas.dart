@@ -3,14 +3,14 @@
 class Planeta {
   final String id;
   final String nombre;
-  final String Radio;
+  final String distancia_sol;
   final String imagenUrl;
   final String descripcion;
 
   const Planeta({
     required this.id,
     required this.nombre,
-    required this.Radio,
+    required this.distancia_sol,
     required this.imagenUrl,
     required this.descripcion,
   });
@@ -24,21 +24,21 @@ final List<Planeta> datos_planetas = const [
   Planeta(
     id: 'PLANET-001',
     nombre: 'Venus',
-    Radio: '108.2 Millones Km',
+    distancia_sol: '108.2 Millones Km',
     imagenUrl: 'assets/images/venus.png',
     descripcion: 'La densa atmósfera de Venus lo convierte en el planeta más caliente de nuestro sistema solar.',
   ),
   Planeta(
     id: 'PLANET-002',
     nombre: 'Mercurio',
-    Radio: '57.9 Millones Km',
+    distancia_sol: '57.9 Millones Km',
     imagenUrl: 'assets/images/mercury.png',
     descripcion: 'Es el planeta más pequeño y rápido; recorre su órbita alrededor del Sol en solo 88 días terrestres.',
   ),
   Planeta(
     id: 'PLANET-003',
     nombre: 'Tierra',
-    Radio: '149.5 Millones Km',
+    distancia_sol: '149.5 Millones Km',
     imagenUrl: 'assets/images/earth.png',
     descripcion: 'El único planeta de nuestro sistema solar con agua líquida en la superficie.',
   ),
