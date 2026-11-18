@@ -7,7 +7,6 @@ import 'Elemento_Planeta.dart';
 class PantallaPrincipal extends StatelessWidget {
   const PantallaPrincipal({super.key});
 
-  // Recuperamos la lista de planetas
   static final List<Planeta> planetas =
   DatosEntrada.obtenerPlanetas();
 
@@ -27,9 +26,7 @@ class PantallaPrincipal extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             for (int i = 0; i < planetas.length; i++) ...[
-              ElementoPlaneta(
-                planeta: planetas[i],
-              ),
+              ElementoPlaneta(planeta: planetas[i]),
 
               if (i < planetas.length - 1)
                 Divider(

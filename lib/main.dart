@@ -1,11 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'Pantalla_Principal.dart';
+import 'Pantalla_Secundaria.dart';
 
 void main() => runApp(
-  const MaterialApp(
+  MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: PantallaPrincipal(),
+    initialRoute: '/',
+    routes: {
+      '/': (context) => const PantallaPrincipal(),
+      '/detalles': (context) => const PantallaSecundaria(),
+    },
   ),
 );
