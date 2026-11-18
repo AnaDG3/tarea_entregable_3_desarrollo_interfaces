@@ -18,7 +18,7 @@ class PantallaSecundaria extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Detalles Planeta",
+          planeta.nombre,
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.black45,
